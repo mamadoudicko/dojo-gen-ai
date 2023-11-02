@@ -13,9 +13,9 @@ from utils.save_embeddings import save_embeddings
 st.set_page_config(page_title="Audio Recorder and Chat")
 
 # Create a state variable to control page navigation
-page = st.sidebar.radio("Select a page", ["Audio Recorder", "Chat Page"])
+page = st.sidebar.radio("Select a page", ["Audio Recorder"])
 
-def audiorec_demo_app():
+def ai_note_taker_recorder_app():
     """
     Render the Audio Recorder page.
     """
@@ -32,10 +32,6 @@ def audiorec_demo_app():
     col_info, col_space = st.columns([0.57, 0.43])
     with col_info:
         st.write('\n' * 2)  # Add vertical spacer
-        st.write('The .wav audio data, as received in the backend Python code,'
-                 ' will be displayed below this message as soon as it has'
-                 ' been processed. [This informative message is not part of'
-                 ' the audio recorder and can be removed easily] 🎈')
 
     if wav_audio_data is not None:
         retranscription = get_retranscription(wav_audio_data)
@@ -50,25 +46,4 @@ def audiorec_demo_app():
             st.audio(wav_audio_data, format='audio/wav')
 
 
-def chat_page():
-    """
-    Render the Chat Page.
-    """
-    st.title("Chat Page")
-    st.write("This is the Chat Page. You can chat with content here.")
-
-    # Add a text input for users to enter their questions
-    user_question = st.text_input("Enter your question:")
-    
-    if st.button("Submit"):
-        if user_question:
-            # Process the user's question and get the answer
-            answer = get_answer(user_question)
-            st.write(f"Question: {user_question}")
-            st.write(f"Answer: {answer}")
-
-# Conditionally render pages based on the selected page
-if page == "Audio Recorder":
-    audiorec_demo_app()
-elif page == "Chat Page":
-    chat_page()
+ai_note_taker_recorder_app()
