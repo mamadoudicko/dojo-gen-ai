@@ -6,7 +6,7 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
-    name="streamlit-audiorec",
+    name="ai-note-taker",
     version="0.1.3",
     author="Stefan Rummer",
     author_email="",
