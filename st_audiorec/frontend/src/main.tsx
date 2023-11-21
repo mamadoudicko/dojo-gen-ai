@@ -1,9 +1,9 @@
 
 import React from "react"
 import {
-    Streamlit,
-    StreamlitComponentBase,
-    withStreamlitConnection
+  Streamlit,
+  StreamlitComponentBase,
+  withStreamlitConnection
 } from "streamlit-component-lib"
 import { App } from "./App"
 
