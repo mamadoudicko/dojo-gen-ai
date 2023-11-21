@@ -17,18 +17,17 @@
     "@types/react-dom": "^16.9.0",
     "npm-watch": "^0.11.0"
   },
-   "watch": {
+  "watch": {
     "build": {
       "patterns": "src",
       "extensions": "js,jsx,ts,tsx,json"
     }
   },
   "scripts": {
-    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
     "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch": "npm-watch"
+    "start": "npm-watch"
   },
   "eslintConfig": {
     "extends": "react-app"
