@@ -1,5 +1,5 @@
-
 import React from "react"
+import ReactDOM from "react-dom"
 import {
   Streamlit,
   StreamlitComponentBase,
@@ -7,16 +7,21 @@ import {
 } from "streamlit-component-lib"
 import { App } from "./App"
 
-
 class AiNoteTaker extends  StreamlitComponentBase {
   render = () =>{
     return <App />
   }
 }
 
-
-export const Main =  withStreamlitConnection(AiNoteTaker)
+const Main =  withStreamlitConnection(AiNoteTaker)
 
 Streamlit.setComponentReady()
 
 Streamlit.setFrameHeight()
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Main />
+  </React.StrictMode>,
+  document.getElementById("root")
+)

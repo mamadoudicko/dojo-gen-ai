@@ -10,7 +10,7 @@ setuptools.setup(
     version="0.1.3",
     author="Stefan Rummer",
     author_email="",
-    description="Record audio from the user's microphone in apps that are deployed to the web. (via Browser Media-API) [GitHub ☆ 160+: steamlit-audio-recorder]",
+    description="Record audio from microphone and chat with taken notes",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/stefanrmmr/streamlit-audio-recorder",

@@ -1,3 +1,4 @@
-st_audiorec/frontend/node_modules/
+**/node_modules/**
 .env
 **/build/**
+**/*.pyc

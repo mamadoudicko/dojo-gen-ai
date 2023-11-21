@@ -1,7 +1,7 @@
 from langchain.text_splitter import CharacterTextSplitter
 
 
-def generate_chunks(text):
+def generate_chunks(text: str):
     """Generate chunks of text from a string."""
 
     text_splitter = CharacterTextSplitter.from_tiktoken_encoder(
