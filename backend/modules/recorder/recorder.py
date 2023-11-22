@@ -31,23 +31,7 @@ def recorder():
 
         embed_and_save_chunks(transcription_chunks)
 
-        question = st.text_input(
-            label="Question", placeholder="Enter a question please"
-        )
-
-        if question:
-            answers = []
-            for transcription_chunk in transcription_chunks:
-                message = f"""
-                Context: {transcription_chunk}
-                Question: {question}
-                If the answer is not in the context above, please answer with empty string "".
-                Answer:
-                """
-
-                answers.append(get_answer(message))
-
-            # Join the answers into a single string
-            answer = " ".join(answers)
-
-            st.write("Answer:", answer)
+    question = st.text_input(label="Question", placeholder="Enter a question please")
+    if question:
+        answer = get_answer(question)
+        st.write("Answer:", answer)
