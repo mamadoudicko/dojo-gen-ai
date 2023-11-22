@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  audio-react-recorder:
+    specifier: ^1.0.5
+    version: 1.0.5(react@16.14.0)
   normalize.css:
     specifier: ^8.0.1
     version: 8.0.1
@@ -2747,6 +2750,16 @@ packages:
     resolution: {integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==}
     engines: {node: '>= 4.5.0'}
     hasBin: true
+    dev: false
+
+  /audio-react-recorder@1.0.5(react@16.14.0):
+    resolution: {integrity: sha512-pvzb0rnSDmzd5IjZNSbl3TQ2X/ZQ9vnVHfdtUCYaafrFm4jcdIzSqqM64qqqt+LXbQGVr3nMale1GH6z/yCRww==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16.0.0
+    dependencies:
+      prop-types: 15.8.1
+      react: 16.14.0
     dev: false
 
   /autoprefixer@9.8.8:
