@@ -8,7 +8,7 @@ openai.api_key = os.environ["OPENAI_API_KEY"]
 
 def get_transcription(audio: bytes) -> str:
     """
-    Return the retrotranscription of the given audio data.
+    Return the transcription of the given audio data.
     """
     # Create a temporary WAV file with a name
     with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_file:

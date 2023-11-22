@@ -1,5 +1,6 @@
 import streamlit as st
 
+from backend.modules.recorder.utils.get_answer import get_answer
 from backend.modules.recorder.utils.get_recorded_audio import get_recorded_audio
 from backend.modules.recorder.utils.get_transcription import get_transcription
 
@@ -21,4 +22,18 @@ def recorder():
 
     if audio_data is not None:
         # write audio data
-        st.write("Transcription :", get_transcription(audio_data))
+        transcription = get_transcription(audio_data)
+        st.write("Transcription:", transcription)
+
+        question = st.text_input(
+            label="Question", placeholder="Enter a question please"
+        )
+        if question:
+            message = f"""
+            Context: {transcription}
+            Question: {question}
+            Answer:
+            """
+            answer = get_answer(message)
+
+            st.write("Answer:", answer)
