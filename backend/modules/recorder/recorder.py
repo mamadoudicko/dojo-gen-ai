@@ -1,5 +1,6 @@
 import streamlit as st
 
+from backend.modules.recorder.utils.embed_and_save_chunks import embed_and_save_chunks
 from backend.modules.recorder.utils.generate_chunks import generate_chunks
 from backend.modules.recorder.utils.get_answer import get_answer
 from backend.modules.recorder.utils.get_recorded_audio import get_recorded_audio
@@ -24,13 +25,16 @@ def recorder():
     if audio_data is not None:
         # write audio data
         transcription = get_transcription(audio_data)
+        st.write("Transcription:", transcription)
+
         transcription_chunks = generate_chunks(transcription)
 
-        st.write("Transcription:", transcription)
+        embed_and_save_chunks(transcription_chunks)
 
         question = st.text_input(
             label="Question", placeholder="Enter a question please"
         )
+
         if question:
             answers = []
             for transcription_chunk in transcription_chunks:
