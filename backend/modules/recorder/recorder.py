@@ -1,6 +1,7 @@
 import streamlit as st
 
 from backend.modules.recorder.utils.get_recorded_audio import get_recorded_audio
+from backend.modules.recorder.utils.get_transcription import get_transcription
 
 
 def recorder():
@@ -20,4 +21,4 @@ def recorder():
 
     if audio_data is not None:
         # write audio data
-        print("audio_data is", audio_data)
+        st.write("Transcription :", get_transcription(audio_data))
