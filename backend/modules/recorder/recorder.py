@@ -5,6 +5,9 @@ from backend.modules.recorder.utils.generate_chunks import generate_chunks
 from backend.modules.recorder.utils.get_answer import get_answer
 from backend.modules.recorder.utils.get_recorded_audio import get_recorded_audio
 from backend.modules.recorder.utils.get_transcription import get_transcription
+from backend.modules.recorder.utils.save_question_and_response import (
+    save_question_and_response,
+)
 
 
 def recorder():
@@ -34,4 +37,5 @@ def recorder():
     question = st.text_input(label="Question", placeholder="Enter a question please")
     if question:
         answer = get_answer(question)
+        save_question_and_response(question, answer)
         st.write("Answer:", answer)
